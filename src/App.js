@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import {Createcomponent, Header, Maincomponent} from './components'
+import {AnimatePresence,motion}from 'framer-motion'
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+<AnimatePresence>
+
+    <div className='w-screen h-auto flex flex-col bg-primary'>
+    
+
+             <Header/>
+            
+       
+             <main className='w-full mt-14   md:mt-20 px-4 md:px-16 py-4'>
+
+                    <Routes>
+                       
+                       <Route   path='/' element={<Maincomponent/>}        />
+                       <Route   path='/create' element={<Createcomponent/>}        />
+
+
+                    </Routes>
+
+
+ 
+
+             </main>
+        
+        </div>
+</AnimatePresence>
+  )
 }
 
-export default App;
+export default App
